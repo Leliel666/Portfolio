@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    HEAD = the "behind the scenes" of the page.
+    Browsers read this first: fonts, CSS file, page title, and how it should
+    look on phones.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NICO — Creative Developer</title>
+
+  <!-- Google Fonts: Inter = readable body text. Press Start 2P = pixel/game titles. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- Your styles live in styles.css (this is the file the browser actually uses). -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-page="home">
+  <!--
+    ============================================================
+    SIDEBAR
+    Stays on the left while you scroll (position: sticky in CSS).
+    You already started this in your first version — same idea,
+    just with icons, XP bar, and links that jump to sections.
+    ============================================================
+  -->
+  <aside id="Sidebar" class="sidebar">
+    <a class="css-profile" href="#start">
+      <!-- Put your own pixel portrait in assets/custom/avatar.png -->
+      <div class="css-prof-pic">
+        <img class="avatar-img" src="assets/custom/avatar.png" alt="Pixel avatar of Nicoline" />
+        <div class="pixel-avatar" aria-hidden="true"></div>
+      </div>
+      <div class="Name-text">
+        <h1 class="css-name">NICO</h1>
+        <p class="css-role">Creative Developer</p>
+      </div>
+    </a>
+
+    <!-- Navigation: Start, quest log, and contact stay here.
+         About me / Photography / Sketchbook / Workshop live on the hotspot cards. -->
+    <nav class="Nav-bar" aria-label="Main">
+      <ul class="nav-text">
+        <li><a class="nav-link is-active" href="#start" data-section="start"><span class="nav-ico" aria-hidden="true">▣</span> Start</a></li>
+        <li><a class="nav-link" href="#quests" data-section="quests"><span class="nav-ico" aria-hidden="true">★</span> Quest log</a></li>
+        <li><a class="nav-link" href="#contact" data-section="contact"><span class="nav-ico" aria-hidden="true">✉</span> Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Fake RPG progress so the sidebar feels like a game HUD. -->
+    <div class="sidebar-stats">
+      <p class="level-label">Level 12</p>
+      <div class="xp-track" aria-hidden="true">
+        <div class="xp-fill"></div>
+      </div>
+      <p class="xp-text">XP 2,450 / 3,500</p>
+    </div>
+
+    <div class="sidebar-footer">
+      <!-- These buttons are wired up in script.js -->
+      <button type="button" id="theme-toggle" class="icon-btn" title="Toggle theme" aria-label="Toggle theme">☀</button>
+      <button type="button" id="sound-toggle" class="icon-btn" title="Toggle sound" aria-label="Toggle sound" aria-pressed="true">🔊</button>
+    </div>
+  </aside>
+
+  <!--
+    ============================================================
+    MAIN CONTENT
+    Everything to the right of the sidebar: hero, stats, quests, contact.
+    ============================================================
+  -->
+  <main class="main">
+
+    <!--
+      HERO / START
+      Full-screen intro. Background is a desk photo. The floating cards
+      are "hotspots" that link to later sections, like clickable labels
+      on objects in a game.
+    -->
+    <section id="start" class="hero">
+      <div class="hero-bg" role="img" aria-label="Moody desk setup with laptop, camera, sketchbook and controller"></div>
+      <div class="hero-dim"></div>
+
+      <div class="hero-copy">
+        <h2 class="hero-title">Hi, I’m Nicoline<span class="cursor">_</span></h2>
+        <p class="hero-bio">Creative Developer blending design, code, and storytelling to craft meaningful experiences.</p>
+        <a class="btn-start" href="#dashboard">Press Start</a>
+      </div>
+
+      <div class="hero-social">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+      </div>
+
+      <!-- Hotspots: About me first, then the gallery underpages. -->
+      <a class="hotspot hs-01" href="about.html">
+        <span class="hs-num">01</span>
+        <span class="hs-title">About Me</span>
+        <span class="hs-link">Explore ›</span>
+      </a>
+      <a class="hotspot hs-02" href="photography.html">
+        <span class="hs-num">02</span>
+        <span class="hs-title">Photography</span>
+        <span class="hs-link">Explore ›</span>
+      </a>
+      <a class="hotspot hs-03" href="sketchbook.html">
+        <span class="hs-num">03</span>
+        <span class="hs-title">Sketchbook</span>
+        <span class="hs-link">Explore ›</span>
+      </a>
+      <a class="hotspot hs-04" href="workshop.html">
+        <span class="hs-num">04</span>
+        <span class="hs-title">Workshop</span>
+        <span class="hs-link">Explore ›</span>
+      </a>
+
+      <a class="scroll-hint" href="#dashboard">
+        <span class="mouse"></span>
+        Scroll to continue
+      </a>
+    </section>
+
+    <!--
+      DASHBOARD
+      Three columns like an RPG menu: skills, tools, achievements.
+      Player stats, tools, and achievements stay on the home HUD.
+      About me and the galleries open from the hotspot cards.
+    -->
+    <section id="dashboard" class="dashboard hud-box">
+      <article class="panel">
+        <h3 class="panel-title">Player Stats</h3>
+        <ul class="stat-list">
+          <li>
+            <div class="stat-row"><span>Design</span><span>90%</span></div>
+            <div class="bar"><span class="bar-fill bar-green" style="width:90%"></span></div>
+          </li>
+          <li>
+            <div class="stat-row"><span>Photography</span><span>80%</span></div>
+            <div class="bar"><span class="bar-fill bar-blue" style="width:80%"></span></div>
+          </li>
+          <li>
+            <div class="stat-row"><span>Illustration</span><span>85%</span></div>
+            <div class="bar"><span class="bar-fill bar-orange" style="width:85%"></span></div>
+          </li>
+          <li>
+            <div class="stat-row"><span>Frontend Dev</span><span>75%</span></div>
+            <div class="bar"><span class="bar-fill bar-cyan" style="width:75%"></span></div>
+          </li>
+          <li>
+            <div class="stat-row"><span>Game Development</span><span>65%</span></div>
+            <div class="bar"><span class="bar-fill bar-red" style="width:65%"></span></div>
+          </li>
+        </ul>
+        <p class="panel-foot">Stat points available &gt; 0</p>
+      </article>
+
+      <article id="workshop" class="panel">
+        <h3 class="panel-title">Inventory <span class="muted">// Tools</span></h3>
+        <div class="tool-grid">
+          <div class="tool-card">
+            <span class="tool-badge"><img src="assets/tools/photoshop.svg" alt="Photoshop"></span>
+            <span class="stars">★★★★</span>
+          </div>
+          <div class="tool-card">
+            <span class="tool-badge"><img src="assets/tools/illustrator.svg" alt="Illustrator"></span>
+            <span class="stars">★★★★</span>
+          </div>
+          <div class="tool-card">
+            <span class="tool-badge"><img src="assets/tools/premiere.svg" alt="Premiere Pro"></span>
+            <span class="stars">★★★★</span>
+          </div>
+          <div class="tool-card">
+            <span class="tool-badge"><img src="assets/tools/after-effects.svg" alt="After Effects"></span>
+            <span class="stars">★★★★</span>
+          </div>
+          <div class="tool-card">
+            <span class="tool-badge"><img src="assets/tools/figma.svg" alt="Figma"></span>
+            <span class="stars">★★★★</span>
+          </div>
+          <div class="tool-card">
+            <span class="tool-badge"><img src="assets/tools/vscode.svg" alt="VS Code"></span>
+            <span class="stars">★★★★</span>
+          </div>
+          <div class="tool-card">
+            <span class="tool-badge"><img src="assets/tools/unity.svg" alt="Unity"></span>
+            <span class="stars">★★★★</span>
+          </div>
+          <div class="tool-card">
+            <span class="tool-badge"><img src="assets/tools/cursor.svg" alt="Cursor"></span>
+            <span class="stars">★★★★</span>
+          </div>
+        </div>
+        <a class="ghost-btn" href="#workshop">View all tools</a>
+      </article>
+
+      <article id="gallery" class="panel">
+        <h3 class="panel-title">Achievements</h3>
+        <ul class="achieve-list">
+          <li>
+            <span class="badge-icon gold">🥇</span>
+            <div>
+              <strong>First Game Published</strong>
+              <small>Unlocked on 12 Mar 2024</small>
+            </div>
+          </li>
+          <li>
+            <span class="badge-icon blue">📷</span>
+            <div>
+              <strong>1,000+ Photos Taken</strong>
+              <small>Unlocked on 03 Jun 2024</small>
+            </div>
+          </li>
+          <li>
+            <span class="badge-icon orange">🎮</span>
+            <div>
+              <strong>Speedrun Club</strong>
+              <small>Unlocked on 21 Sep 2024</small>
+            </div>
+          </li>
+          <li>
+            <span class="badge-icon green">🌐</span>
+            <div>
+              <strong>Portfolio Live</strong>
+              <small>Unlocked on 08 Jan 2025</small>
+            </div>
+          </li>
+          <li>
+            <span class="badge-icon purple">🎲</span>
+            <div>
+              <strong>Dungeon Master</strong>
+              <small>Unlocked on 14 Feb 2025</small>
+            </div>
+          </li>
+        </ul>
+        <a class="ghost-btn" href="#gallery">View all achievements</a>
+      </article>
+    </section>
+
+    <!-- Hidden landing spots so Sketchbook / Games nav still work. -->
+    <div id="sketchbook" class="anchor-offset"></div>
+    <div id="games" class="anchor-offset"></div>
+
+    <!--
+      QUEST LOG (featured projects)
+      Each card = one project. The arrows slide the row in script.js.
+    -->
+    <section id="quests" class="quests">
+      <div class="section-head">
+        <h2><span class="pixel-kicker">Quests</span> / Featured Projects</h2>
+        <a class="ghost-btn" href="#quests">View all quests</a>
+      </div>
+
+      <div class="quest-wrap">
+        <button type="button" class="quest-arrow prev" aria-label="Previous projects">‹</button>
+
+        <div class="quest-track" id="quest-track">
+          <a class="quest-card" href="album.html?gallery=photography&amp;album=between-places" data-gallery="photography" data-album="between-places">
+            <div class="quest-meta"><span>Quest 01</span><span class="tag-done">Completed</span></div>
+            <div class="quest-art art-photo"><img class="quest-cover" alt=""></div>
+            <h3>Between Places</h3>
+            <p class="quest-cat">Photography</p>
+            <p class="quest-desc">A collection of landscapes, streets, and quiet moments found between destinations.</p>
+            <div class="quest-foot">
+              <span class="chip">Lightroom</span>
+              <span class="chip">Photoshop</span>
+              <span class="xp">+120 XP</span>
+            </div>
+          </a>
+
+          <a class="quest-card" href="album.html?gallery=sketchbook&amp;album=characters" data-gallery="sketchbook" data-album="characters">
+            <div class="quest-meta"><span>Quest 02</span><span class="tag-done">Completed</span></div>
+            <div class="quest-art art-web"><img class="quest-cover" alt=""></div>
+            <h3>Character Concept Series</h3>
+            <p class="quest-cat">Digital Illustration</p>
+            <p class="quest-desc">Original character contacts and illustrations inspired by fantasy and storytelling.</p>
+            <div class="quest-foot">
+              <span class="chip">Procreate</span>
+              <span class="chip">Illustration</span>
+              <span class="chip">Ipad</span>
+              <span class="xp">+200 XP</span>
+            </div>
+          </a>
+
+          <a class="quest-card" href="album.html?gallery=workshop&amp;album=builds" data-gallery="workshop" data-album="builds">
+            <div class="quest-meta"><span>Quest 03</span><span class="tag-done">Completed</span></div>
+            <div class="quest-art art-game"><img class="quest-cover" alt=""></div>
+            <h3>Figma</h3>
+            <p class="quest-cat">Webdesign</p>
+            <p class="quest-desc">Small school projects.</p>
+            <div class="quest-foot">
+              <span class="chip">Webdesign</span>
+              <span class="chip">UI/UX</span>
+              <span class="xp">+180 XP</span>
+            </div>
+          </a>
+        </div>
+
+        <button type="button" class="quest-arrow next" aria-label="Next projects">›</button>
+      </div>
+    </section>
+
+    <!--
+      CONTACT + FOOTER
+      Left: campfire illustration (CSS). Center: call to action.
+      Right: links + a fake mini-map.
+    -->
+    <section id="contact" class="contact">
+      <div class="campfire" aria-hidden="true">
+        <div class="camp-sky"></div>
+        <div class="camp-mountains"></div>
+        <div class="camp-fire"></div>
+        <div class="camp-hero"></div>
+      </div>
+
+      <div class="contact-copy">
+        <h2>Let’s Create Something Amazing<span class="cursor">_</span></h2>
+        <p>Got a project, a class assignment, or a wild idea? Drop a message and we can start the next quest together.</p>
+        <a class="btn-start" href="mailto:hello@example.com">✉ Send a message</a>
+      </div>
+
+      <div class="contact-side">
+        <div class="hud-box mini">
+          <h3 class="panel-title">Find Me Here</h3>
+          <ul class="find-me">
+            <li><a href="mailto:hello@example.com">✉ Email</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">in LinkedIn</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">⌘ GitHub</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">📷 Instagram</a></li>
+          </ul>
+        </div>
+        <div class="hud-box mini map-box">
+          <h3 class="panel-title">Map</h3>
+          <p class="map-caption" id="map-caption">Grenaa, Denmark</p>
+          <div class="mini-map">
+            <iframe
+              id="location-map"
+              title="Map of my current location"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=56.4157,10.8783&z=12&output=embed"
+            ></iframe>
+            <span class="pin">I am here</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>© 2026 Nicoline Bentien</p>
+      <p>Made with ♥ and pixels</p>
+      <p class="easter"><a href="studio.html">Studio</a> · P.S. Try the Konami Code</p>
+    </footer>
+  </main>
+
+  <!-- Popup that appears if someone types ↑↑↓↓←→←→BA (see script.js). -->
+  <div id="secret" class="secret" hidden>
+    <p>SECRET UNLOCKED</p>
+    <p class="secret-xp">+500 XP</p>
+  </div>
+
+  <script src="gallery-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
