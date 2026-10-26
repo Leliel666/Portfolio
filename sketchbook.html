@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sketchbook — NICO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="subpage" data-category="sketchbook" data-view="albums">
+  <aside class="sidebar">
+    <a class="css-profile" href="Home-page.html#start">
+      <div class="css-prof-pic">
+        <img class="avatar-img" src="assets/custom/avatar.png" alt="Pixel avatar of Nicoline">
+        <div class="pixel-avatar" aria-hidden="true"></div>
+      </div>
+      <div class="Name-text">
+        <h1 class="css-name">NICO</h1>
+        <p class="css-role">Creative Developer</p>
+      </div>
+    </a>
+    <nav class="Nav-bar" aria-label="Main">
+      <ul class="nav-text">
+        <li><a class="nav-link" href="Home-page.html#start"><span class="nav-ico" aria-hidden="true">▣</span> Start</a></li>
+        <li><a class="nav-link" href="Home-page.html#quests"><span class="nav-ico" aria-hidden="true">★</span> Quest log</a></li>
+        <li><a class="nav-link" href="Home-page.html#contact"><span class="nav-ico" aria-hidden="true">✉</span> Contact</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-stats">
+      <p class="level-label">Level 12</p>
+      <div class="xp-track" aria-hidden="true"><div class="xp-fill"></div></div>
+      <p class="xp-text">XP 2,450 / 3,500</p>
+    </div>
+    <div class="sidebar-footer">
+      <button type="button" id="theme-toggle" class="icon-btn" title="Toggle theme" aria-label="Toggle theme">☀</button>
+      <button type="button" id="sound-toggle" class="icon-btn" title="Toggle sound" aria-label="Toggle sound" aria-pressed="true">🔊</button>
+    </div>
+  </aside>
+
+  <main class="main gallery-main">
+    <header class="gallery-head hud-box">
+      <p class="pixel-kicker">03</p>
+      <h1>Sketchbook</h1>
+      <p>Choose an album to see the pages inside.</p>
+    </header>
+    <section class="gallery-grid album-grid" id="gallery-grid" aria-live="polite"></section>
+    <p class="gallery-empty" id="gallery-empty" hidden>No albums yet.</p>
+
+    <a class="page-turn page-turn-prev" href="photography.html">
+      <span class="page-turn-arrow" aria-hidden="true">‹</span>
+      <span class="page-turn-name">Photography</span>
+    </a>
+    <a class="page-turn page-turn-next" href="workshop.html">
+      <span class="page-turn-arrow" aria-hidden="true">›</span>
+      <span class="page-turn-name">Workshop</span>
+    </a>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">×</button>
+    <img id="lightbox-image" alt="">
+  </div>
+
+  <script src="gallery-data.js"></script>
+  <script src="script.js"></script>
+  <script src="gallery.js"></script>
+</body>
+</html>
