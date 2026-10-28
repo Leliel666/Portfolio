@@ -14,11 +14,27 @@
     ],
     "items": [
       {
-        "id": "43e17ecf1717d987",
+        "id": "Lighthouse",
         "albumId": "between-places",
         "file": "IMG_5480.JPG",
         "url": "uploads/photography/IMG_5480.JPG",
         "originalName": "IMG_5480.JPG",
+        "createdAt": "2026-09-16T16:55:36.908Z"
+      }
+      {
+        "id": "AA",
+        "albumId": "between-places",
+        "file": "IMG_5846.JPG",
+        "url": "uploads/photography/IMG_5846.JPG",
+        "originalName": "IMG_5846.JPG",
+        "createdAt": "2026-09-16T16:55:36.908Z"
+      }
+      {
+        "id": "AA-2",
+        "albumId": "between-places",
+        "file": "IMG_5849.JPG",
+        "url": "uploads/photography/IMG_5849.JPG",
+        "originalName": "IMG_5849.JPG",
         "createdAt": "2026-09-16T16:55:36.908Z"
       }
     ]
