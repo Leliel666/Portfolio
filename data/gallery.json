@@ -1,0 +1,56 @@
+{
+  "photography": {
+    "albums": [
+      {
+        "id": "between-places",
+        "title": "Between Places",
+        "description": "Landscapes and quiet frames between destinations."
+      },
+      {
+        "id": "city",
+        "title": "City",
+        "description": "Streets, lights, and urban details."
+      }
+    ],
+    "items": [
+      {
+        "id": "43e17ecf1717d987",
+        "albumId": "between-places",
+        "file": "1789577736907-43e17ecf1717d987.jpg",
+        "url": "uploads/photography/1789577736907-43e17ecf1717d987.jpg",
+        "originalName": "IMG_6914.jpg",
+        "createdAt": "2026-09-16T16:55:36.908Z"
+      }
+    ]
+  },
+  "sketchbook": {
+    "albums": [
+      {
+        "id": "characters",
+        "title": "Characters",
+        "description": "Faces, figures, and original designs."
+      },
+      {
+        "id": "pages",
+        "title": "Pages",
+        "description": "Notes, thumbnails, and sketchbook spreads."
+      }
+    ],
+    "items": []
+  },
+  "workshop": {
+    "albums": [
+      {
+        "id": "builds",
+        "title": "Builds",
+        "description": "Finished screens, scenes, and prototypes."
+      },
+      {
+        "id": "process",
+        "title": "Process",
+        "description": "Work-in-progress and behind the scenes."
+      }
+    ],
+    "items": []
+  }
+}
